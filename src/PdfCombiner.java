@@ -9,15 +9,16 @@ public class PdfCombiner{
         Scanner Leitura = new Scanner(System.in); // Instanciando a entrada de dados por meio da leitura
 
         boolean Execute = true;
+
         while(Execute == true) {
 
             System.out.println("Combinador de Pdf's!\n1 - Executar Programa\n2 - Sair");
 
-            int OpcaoUsuario = Leitura.nextInt();
+            String OpcaoUsuario = Leitura.nextLine();
 
              switch(OpcaoUsuario){
 
-                case 1:
+                case "1":
                     System.out.println("Digite o caminho do diretório que contém os pdf's:");
                     String caminhoDaPasta = Leitura.nextLine();
 
@@ -53,7 +54,7 @@ public class PdfCombiner{
                     }
 
 
-                case 2:
+                case "2":
                     Execute = false;
                     break;
 

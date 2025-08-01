@@ -44,7 +44,7 @@ public class PdfCombiner{
 
                     if (arquivos == null || arquivos.length == 0) {
                         Clearconsole.Limpador();
-                        System.out.println("Nenhum PDF encontrado na pasta. Voltando ao início. . .\n");
+                        System.out.println("Nenhum PDF encontrado na pasta.\n");
 
                     }
 
@@ -65,7 +65,10 @@ public class PdfCombiner{
                         Clearconsole.Limpador();
 
                     } catch (IOException e) {
-                        System.err.println(ANSI_RED + "Erro ao unir PDFs: " + e.getMessage());
+                        System.err.println(ANSI_RED + "Erro ao unir PDFs: \n" + e.getMessage());
+                        System.out.println("Pressione ENTER para continuar. . .");
+                        Leitura.next();
+                        Clearconsole.Limpador();
                     }
 
 

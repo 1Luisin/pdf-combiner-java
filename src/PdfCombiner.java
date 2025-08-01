@@ -77,8 +77,7 @@ public class PdfCombiner{
                     break;
 
                  default:
-                     System.out.println( ANSI_RED + "Comando não reconhecido!\n");
-                     main(args);
+                     System.out.println( ANSI_RED + "Comando não reconhecido!\n" + ANSI_RESET);
             }
 
         }

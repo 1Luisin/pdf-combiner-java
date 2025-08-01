@@ -30,22 +30,23 @@ public class PdfCombiner{
                     Clearconsole.Limpador();
                     System.out.println("Digite o caminho do diretório que contém os pdf's:");
                     String caminhoDaPasta = Leitura.nextLine();
+
                     Clearconsole.Limpador();
                     System.out.println("Digite o nome do arquivo final");
                     String NomeArquivoFinal = "\\"+ Leitura.nextLine() + ".pdf";
+
                     Clearconsole.Limpador();
                     System.out.println("Digite o caminho final.");
                     String destino = Leitura.nextLine() + NomeArquivoFinal;
-
 
 
                     File pasta = new File(caminhoDaPasta);
                     File[] arquivos = pasta.listFiles((dir, name) -> name.toLowerCase().endsWith(".pdf"));
 
                     if (arquivos == null || arquivos.length == 0) {
-                        Clearconsole.Limpador();
                         System.out.println("Nenhum PDF encontrado na pasta.\n");
-
+                        Leitura.nextLine();
+                        Clearconsole.Limpador();
                     }
 
                     PDFMergerUtility merger = new PDFMergerUtility();
@@ -61,13 +62,14 @@ public class PdfCombiner{
                         merger.mergeDocuments(null);
                         System.out.println(ANSI_GREEN + "PDFs unidos com sucesso! Arquivo final: " + ANSI_RESET + destino);
                         System.out.println("Pressione ENTER para continuar. . .");
-                        Leitura.next();
+                        Leitura.nextLine();
                         Clearconsole.Limpador();
+                        main(args);
 
                     } catch (IOException e) {
                         System.err.println(ANSI_RED + "Erro ao unir PDFs: \n" + e.getMessage());
                         System.out.println("Pressione ENTER para continuar. . .");
-                        Leitura.next();
+                        Leitura.nextLine();
                         Clearconsole.Limpador();
                     }
 
